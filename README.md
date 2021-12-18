@@ -44,12 +44,10 @@ Additionally, the parallelism of mode 3 is implemented via Posix Threads. So mak
 of the pthreads API is present.
 
 ## Installation
+sudo dpkg -i package.deb
 
 ##### Quickstart
 Go to the [Release](https://github.com/Smiril/air-blast/air-blast-1.1.2_i386.deb) and locate the latest version. 
-
-##### Building From Source
-sudo make
 
 ## Usage
 The program is meant to be run from the commandline. You will most likely need elevated privileges in order
