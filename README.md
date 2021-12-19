@@ -17,7 +17,7 @@ Currently there are three modes of operation:
 1. Discovery of active wifi sessions in the vicinity.
 2. Deauthentication/Disassociation of a single client.
 3. DoS-style mass deauthentication/disassociation of all discovered sessions.
-4. Simple WI-FI-SCAN LIB SCAN Option.
+4. Simple WI-FI-SCAN Option.
 
 The program uses the standard pcap routines to read packets from a capture interface
 and write forged ones to the wire. Mode 1 implements a minimal parser with the purpose
@@ -36,7 +36,7 @@ as well as packet injection, ideally **at the same time**. Otherwise errors are 
 
 ##### Library Dependencies
 * [libpcap](http://www.tcpdump.org/) *(packet capture and injection)*.
-* [libmnl](https://www.netfilter.org/projects/libmnl/index.html) *(used for wifi-scan lib)*.
+* [libmnl](https://www.netfilter.org/projects/libmnl/index.html) *(used for wifi-scan)*.
 
 Additionally, the parallelism of mode 3 is implemented via Posix Threads. So make sure an implementation
 of the pthreads API is present.
