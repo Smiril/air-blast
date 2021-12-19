@@ -35,7 +35,6 @@ Your wireless card should support capturing packets in [promiscuous mode](https:
 as well as packet injection, ideally **at the same time**. Otherwise errors are likely to occur.
 
 ##### Library Dependencies
-* [iwlib](https://hewlettpackard.github.io/wireless-tools/Tools.html) from wireless tools *(for scanning and some other stuff)*.
 * [libpcap](http://www.tcpdump.org/) *(packet capture and injection)*.
 * [libmnl](https://www.netfilter.org/projects/libmnl/index.html) *(used for wifi-scan lib)*.
 
