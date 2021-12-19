@@ -73,7 +73,7 @@ and print the source mac addresses to the console.
 #### -d
 Deauthentication of a single client device. Command format:
 
-`air-blast -i <myNIC> -s <spoofed client mac> -b <bssid> [ -a ] -d` 
+`air-blast -i <myNIC> -s <spoofed client mac> -b <bssid> -d` 
 
 This mode can be used to target a single machine whose mac address is already known.
 `<spoofed client mac>` should be a string of the form `XX:XX:XX:XX:XX:XX`. Likewise, `<bssid>` 
@@ -82,7 +82,7 @@ is supposed to be the mac address of the access point (in the same format).
 #### -f
 Automatic deauthentication of all discovered sessions. Command format:
 
-`air-blast -i <myNIC> [ -c max_connections ] [ -a ] -f`
+`air-blast -i <myNIC> [ -c max_connections ] -f`
 
 This mode acts as an extension of the watch functionality. 
 Instead of just monitoring data frames, the program will actively block clients at first sight. 
@@ -98,19 +98,10 @@ pass unnoticed.
 *myNIC* should be the device name as it appears in ifconfig/ip, e.g. `wlan0`.  
 
 ###### Optional
-* `-p`: If this parameter is supplied, iwlib will conduct a passive scan. The passive scan has the
-advantage of being "listen only", so no probe requests are sent to APs. Thus the mac address of the
-attacking machine should not show up in any log files. However, scan results will likely be less 
-comprehensive than with the active counterpart.
-
-   By default, an active scan is performed.
-
 * `-c max_connections`: When using mode 1 or 3, *airkick* limits itself to a conservative default 
 (tweakable at compile time) of tracked connections. This parameter can be used to increase
 the tracking limit. Beware, though, that the impact of doing so might be significant, especially
 in flood mode (every thread gets its own packet buffer and pcap handle). Use this option at your own risk.
-
-* `-a`: When blocking clients, *airkick* defaults to deauthentication frames. This option can be used to switch to disassociation frames should the need arise.
 
 ## Limitations
 
